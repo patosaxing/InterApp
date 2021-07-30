@@ -1,7 +1,13 @@
 const express = require ("express")
 const app = express()
+const dotenv = require("dotenv")
+
+const connectDB = require("./Models/db")
 
 const port = 3000
+
+dotenv.config()
+connectDB()
 
 app.get('/', (req, res) =>
 {
