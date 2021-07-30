@@ -1,9 +1,11 @@
+//Import Statements
 const express = require ("express")
 const app = express()
 const dotenv = require("dotenv")
 
 const connectDB = require("./Models/db")
 
+//Port Setup
 const port = 3000
 
 dotenv.config()
