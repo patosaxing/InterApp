@@ -6,12 +6,13 @@ const cors = require('cors')
 const cookieParser = require('cookie-parser')
 const userRoutes =  require("./Routes/userRoutes")
 
+//Database Import Statement
 const connectDB = require("./Models/db")
 
 //Port Setup
-const port = 3000
+const port = 3000 
 
-//Database import and connection
+//Database connection
 dotenv.config()
 connectDB()
 
@@ -19,6 +20,9 @@ connectDB()
 app.use(cors())
 app.use(express.json({ extended: true }))
 app.use(cookieParser())
+
+//User route
+app.use('/register', userRoutes)
 
 app.listen(port, () =>
 {
