@@ -4,7 +4,7 @@ const router = express.Router()
 const authControl = require("../Controllers/authControl")
 const {protect, admin} = require("../Middleware/auth")
 
-router.post("/register", authControl.register)
+router.post("/users/register", authControl.register)
 
 // router.get("/", async(req,res) =>
 // {

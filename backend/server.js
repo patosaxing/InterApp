@@ -5,6 +5,13 @@ const dotenv = require("dotenv")
 const cors = require('cors')
 const cookieParser = require('cookie-parser')
 const userRoutes =  require("./Routes/userRoutes")
+//const User = require ("./Models/user")
+
+//Middleware
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 
 //Database Import Statement
 const connectDB = require("./Models/db")
@@ -16,14 +23,13 @@ const port = 3000
 dotenv.config()
 connectDB()
 
-//Middleware
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.get('/', (req, res) => {
+    res.send('App is running at ROOT');
+  });
+
 
 //User route
-app.use('/app', userRoutes)
+app.use('/users', userRoutes)
 
 app.listen(port, () =>
 {

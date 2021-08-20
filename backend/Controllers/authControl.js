@@ -9,7 +9,7 @@ const authControl = {
     //Register Function
     register: asyncHandler(async (req, res, next) => 
     {
-        const { userName, email, password } = req.body
+        const { userName, email, password, firstName, lastName } = req.body
 
         //check if Username already exists
         const userExits = await User.findOne({ userName })
