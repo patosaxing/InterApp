@@ -17,12 +17,13 @@ dotenv.config()
 connectDB()
 
 //Middleware
-app.use(cors())
-app.use(express.json({ extended: true }))
-app.use(cookieParser())
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 
 //User route
-app.use('/register', userRoutes)
+app.use('/app', userRoutes)
 
 app.listen(port, () =>
 {
