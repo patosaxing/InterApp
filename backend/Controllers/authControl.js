@@ -48,7 +48,34 @@ const authControl = {
         {
             return res.status(400).json("Invalid user data. All fields are required")
         }
-    })
+    }),
+
+    //Login Function
+    login: async(req, res, next) =>
+    {
+        const { email, password } = req.body;
+
+        const user = await User.findOne({ email });
+
+        if (user && (await user.matchPassword(password)))
+        {
+            res.json({
+                _id: user._id,
+                username: user.username,
+                email: user.email,
+                isAdmin: user.isAdmin,
+                token: generateToken(user._id),
+                primarySkills: user.primarySkills,
+                userLocation: user.userLocation,
+                linkedIN: user.linkedIN
+            })
+        }
+
+        else
+        {
+            return res.status(401).json("Invalid email or password")
+        }
+    },
 }
 
 module.exports = authControl
