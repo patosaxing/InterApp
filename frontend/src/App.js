@@ -1,24 +1,20 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
+import React from 'react';
+//import Route from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
+import gradeConvert from './Pages/gradeConvert';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Welcome to<code> InterApp where</code> the future is realized
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <main className = "py-3">
+        <Container>
+          <Route path = '/gradeConvert' component = {gradeConvert} />
+        </Container>
+      </main>
+    </Router>
   );
 }
 
