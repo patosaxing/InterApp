@@ -17,7 +17,7 @@ app.use(cookieParser());
 const connectDB = require("./Models/db")
 
 //Port Setup
-const port = 3000 
+const port = 4000 
 
 //Database connection
 dotenv.config()
