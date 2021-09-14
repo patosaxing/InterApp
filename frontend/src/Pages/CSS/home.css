@@ -1,0 +1,10 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url(https://www.wallpapertip.com/wmimgs/40-405616_hd-background-black-and-white-wave-pattern-wallpaper.jpg);
+}
+.container{
+    max-width: 700px;
+    margin: auto;
+
+    align-items: center;
+}
