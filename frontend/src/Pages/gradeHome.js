@@ -5,9 +5,16 @@ import React from 'react'
 const gradeHome = () =>
 {
     return (
-        <div style = {{display: 'flex', justifyContent: 'center',
-        alignItems: 'center', height: '90vh'}}>
-                <h1> InterApp </h1>
+        <div style = {{ alignItems: 'top', height: '90vh'}}>
+
+                <h1 style = {{color: '#FF4040', fontSize: '60px',
+                marginLeft: '500px', marginTop: '200px', justifyContent: 'left'}}> InterApp </h1>
+
+                <p style = {{marginLeft: '500px', fontSize: '35px'}}>Find your path</p>
+
+               <button style = {{ backgroundColor: '#FF4040', color: '#000'}}>
+                    Log In 
+               </button>
         </div>
     )
 }
