@@ -42,8 +42,10 @@ color: #000;
 
 export const NavMenu = styled.div`
 display: flex;
+position: right;
 align-items: right;
-font-size: 1.8rem;
+font-size: 1.5rem;
+font-family:'Comfortaa', cursive;
 margin-right: 24px
 
 @media screen and (max-width: 768px){

@@ -1,5 +1,4 @@
 import React from 'react';
-//import Route from 'react-router-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //import { Container } from 'react-bootstrap';
 import Navbar from './Components/Navbar'

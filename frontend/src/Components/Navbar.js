@@ -1,39 +1,39 @@
 import React from 'react'
+import '../Pages/CSS/navbar.css'
+//import Logo from '../Images/logo1.svg'
 import { Nav, 
-    NavLink, 
-    Bars, 
-    NavMenu } from './NavbarElements'
+         NavLink, 
+         Bars, NavMenu
+       } from './NavbarElements'
 
-import '../Images/logo1.svg'    
+  
 
 const Navbar = () => {
     return (
         <>
             <Nav>
                 <NavLink to = "/">
-                   <img src = {require('../Images/logo1.svg')} alt = 'IA' />
+                    <h1 className = "logo" >
+                        IA
+                    </h1>
                 </NavLink>
+
                 <Bars />
-                <NavMenu>
+
+                <NavMenu className = "navMenu">
                     <NavLink to = "/about" activeStyle>
                         About
                     </NavLink>
-                    <NavLink to = "/services" activeStyle>
+
+                    <NavLink to = "/services">
                         Services
                     </NavLink>
+
                     <NavLink to = "/contactUs">
                         Contact Us
                     </NavLink>
-                    {/* <NavLink to = "/signUp">
-                        Sign Up
-                    </NavLink> */}
-                    
+
                 </NavMenu>
-                {/* <NavBtn>
-                    <NavBtnLink to = "/signIn">
-                        Sign In
-                    </NavBtnLink>
-                </NavBtn> */}
             </Nav>
         </>
     )
