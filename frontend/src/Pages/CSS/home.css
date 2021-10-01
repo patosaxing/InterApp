@@ -46,7 +46,7 @@ button{
     border-radius: 5px;
     padding: 10px 0;
     font-weight: bold;
-    font-family: 'Comfortaa' cursive;
+    font-family:'Comfortaa', cursive;
 }
 
 /* .btn2{
@@ -59,8 +59,9 @@ button{
     width: 200px;
     margin: auto;
     padding-right: 80px;
-    font-family: 'Comfortaa' cursive;
+    font-family:'Comfortaa', cursive;
     font-weight: 400;
+    font-size: 15px;
 }
 
 .inter{
@@ -76,6 +77,6 @@ button{
 }
 
 .paragraph1{
-    font-family: 'Arial';
+    font-family:'Comfortaa', cursive;
     font-size: 40px;
 }

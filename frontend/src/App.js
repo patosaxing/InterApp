@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './Components/Navbar'
 import Home from './Pages/gradeHome';
 import About from './Pages/gradeAbout';
+import Footer from './Components/footer'
 //import gradeConvert from './Pages/gradeConvert';
 //import './App.css';
 
@@ -15,7 +16,8 @@ function App() {
         <Route path = '/' exact component = {Home} />
         <Route path = '/about' exact component = {About} />
       </Switch>
-    </Router>  
+      <Footer />  
+    </Router>
   );
 }
 
