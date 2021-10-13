@@ -2,47 +2,73 @@ import React from 'react';
 import '../Pages/CSS/home.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-//import { connect } from 'react-redux';
 import axios from 'axios';
-import { login } from '../actions/action.auth';
+//import { login } from '../actions/action.auth';
 //import { FaMarsDouble } from 'react-icons/fa';
 //import { useDispatch } from 'react-redux' 
 //import Login  from '../../../backend/Controllers/authControl';
 
-const GradeHome = ( {login} ) =>
+const GradeHome = () =>
 {
-    const [loginData, setLoginData] = useState({
-        email: '',
-        password: ''
-    })
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [error, setError] = useState(false)
+    const [loading, setLoading] = useState(false)
 
-    const onChange = (e) => setLoginData ({
-        ...loginData, [e.target.email]: e.target.value
-    })
-
-    const onSubmit = (e) => {
+    const submitHandler = async (e) =>
+    {
         e.preventDefault();
-        login(email, password)
+
+        try {
+            const config = {
+                headers:{
+                    "Content-type" : "application/json"
+                }
+            }
+
+            setLoading(true)
+
+            const { data } = await axios.post('users/login',
+            {
+                email, password,
+            },
+            config);
+
+            console.log(data)
+            localStorage.setItem("userInfo", JSON.stringify(data))
+            setLoading(false)
+        } 
+        catch (error) {
+            setError(error.response.data.message)
+        }
+        console.log(email, password)
     }
-
-    const { email, password } = loginData;
-
+    
     return (
         <div>
-            <form action = "" className = "form" onSubmit = {(e) => onSubmit(e)}>
-                <input type = "text" placeholder = "Email" onChange = {(e) => onChange (e)}
-                autoComplete = "on" />
+            <form action = "" className = "form"
+             onSubmit = {submitHandler} >
+                <input 
+                type = "email"
+                value = {email} 
+                placeholder = "Email" 
+                onChange = {(e) => setEmail(e.target.value)}
+                autoComplete = "on" 
+                />
                 <br />
 
-                <input type = "password" placeholder = "Password" onChange = {(e) => onChange (e)}
-                autoComplete = "on" />
+                <input 
+                type = "password"
+                value = {password} 
+                placeholder = "Password" 
+                onChange = {(e) => setPassword(e.target.value)}
+                autoComplete = "off" />
                 <br />
 
-                <Link to = "/login">
+                
                 <button type = "submit">
                     Log In
-                </button>
-                </Link>
+                </button> 
                 <br />
 
                 <Link to = "/register">
@@ -76,4 +102,3 @@ const GradeHome = ( {login} ) =>
 
 
 export default GradeHome;
-export {login};
