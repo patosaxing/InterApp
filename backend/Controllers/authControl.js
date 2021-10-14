@@ -53,6 +53,7 @@ const authControl = {
     //Login Function
     login: async(req, res, next) =>
     {
+        console.log("here")
         const { email, password } = req.body;
 
         const user = await User.findOne({ email });
