@@ -82,16 +82,6 @@ const Login = () => {
                 <br />
 
             </form>
-
-            {/* <div className = "inter">
-                <h1 className = "header">
-                    InterApp
-                </h1> 
-
-            <p className = "paragraph1">
-                    Find your path
-            </p>
-            </div> */}
         </div>
     )
     }
