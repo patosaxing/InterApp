@@ -7,27 +7,31 @@
     outline: none;
 }
 
-body{
-    width: 100%;
-}
+/* body{
+    display: flex;
+} */
 
-.form1{
+.form3{
     background-color: #fff;
-    position: absolute;
-    width: 320px;
-    height: 270px;
+    margin-top: 190px;
+    margin-left: 490px;
+    align-items: center;
+    justify-content: center;
+    width: 530px;
+    height: 280px;
     padding: 10px 5px 20px 5px;
-    margin: -10vh 850px;
+    /* margin: -10vh 850px; */
     border-radius: 5px;
     box-shadow: 5px 5px 6px -7px;
     margin-bottom: 80px;
+    font-family: 'Comfortaa' cursive;
 }
 
-input[type = 'text'], input[type = 'email']{
+input[type = 'text'], input[type = 'text']{
     display: block;
     background-color: #fff;
     border: 1.5px solid rgb(200, 200, 200);
-    width: 283px;
+    width: 500px;
     padding: 10px 40px;
     border-radius: 5px;
     text-align: left;
@@ -35,11 +39,11 @@ input[type = 'text'], input[type = 'email']{
     font-family: 'Comfortaa' cursive;
 }
 
-input[type = 'text'], input[type = 'password']{
+input[type = 'text'], input[type = 'email2']{
     display: block;
     background-color: #fff;
     border: 1.5px solid rgb(200, 200, 200);
-    width: 283px;
+    width: 500px;
     padding: 10px 40px;
     border-radius: 5px;
     text-align: left;
@@ -47,11 +51,23 @@ input[type = 'text'], input[type = 'password']{
     font-family: 'Comfortaa' cursive;
 }
 
-button{
+input[type = 'text'], input[type = 'password2']{
+    display: block;
+    background-color: #fff;
+    border: 1.5px solid rgb(200, 200, 200);
+    width: 500px;
+    padding: 10px 40px;
+    border-radius: 5px;
+    text-align: left;
+    color: black;
+    font-family: 'Comfortaa' cursive;
+}
+
+.button2{
     border: none;
     background-color: #FF4040;
     color: black;
-    width: 283px;
+    width: 500px;
     display: block;
     border-radius: 5px;
     padding: 10px 0;
@@ -59,33 +75,14 @@ button{
     font-family:'Comfortaa', cursive;
 }
 
-.btn2{
-    width: 283px;
-    padding: 10px 0;
-}
-
-.f-pws{
+.btn3{
+    border: none;
+    background-color: #FF4040;
+    color: black;
+    width: 500px;
     display: block;
-    width: 200px;
-    padding-right: 80px;
+    border-radius: 5px;
+    padding: 10px 0;
+    font-weight: bold;
     font-family:'Comfortaa', cursive;
-    font-weight: 400;
-    font-size: 15px;
-}
-
-.inter{
-    width: 350px;
-    margin: -09vh 350px;
-    margin-top: 250px;
-}
-
-.header{
-    font-family: 'Aclonica';
-    font-size: 80px;
-    color: #FF4040;
-}
-
-.paragraph1{
-    font-family:'Comfortaa', cursive;
-    font-size: 40px;
 }
