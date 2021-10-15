@@ -46,15 +46,14 @@ const GradeHome = () =>
     
     return (
         <div>
-            <form action = "" className = "form"
+            <form action = "" className = "form1"
              onSubmit = {submitHandler} >
                 <input 
                 type = "email"
                 value = {email} 
                 placeholder = "Email" 
                 onChange = {(e) => setEmail(e.target.value)}
-                autoComplete = "on" 
-                />
+                autoComplete = "on" />
                 <br />
 
                 <input 
