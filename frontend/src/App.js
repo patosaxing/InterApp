@@ -7,6 +7,7 @@ import About from './Pages/gradeAbout';
 import Footer from './Components/footer'
 import Login from './Pages/Login'
 import Register from './Pages/Register'
+import Profile from './Pages/Profile'
 //import gradeConvert from './Pages/gradeConvert';
 //import './App.css';
 
@@ -19,6 +20,7 @@ function App() {
         <Route path = '/about' exact component = {About} />
         <Route path = '/login' exact component = {Login} />
         <Route path = '/register' exact component = {Register} />
+        <Route path = '/profile' exact component = {Profile} />
       </Switch>
       <Footer />  
     </Router>

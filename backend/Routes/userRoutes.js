@@ -11,8 +11,13 @@ router.post("/register", [
         check("lastName", "Last Name is Required").not().isEmpty(),
         check("email1", "Please include a valid email").isEmail(),
         check("userName", "Please enter your User Name").not().isEmpty()
-], authControl.register)
-router.post("/login", authControl.login)
+], authControl.register);
+
+
+router.post("/login", authControl.login);
+
+router.route("/profile").post(protect, authControl.getUserProfile)
+
 
 // router.get("/", async(req,res) =>
 // {

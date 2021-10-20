@@ -78,6 +78,39 @@ const authControl = {
             return res.status(401).json("Invalid email or password")
         }
     },
+
+    getUserProfile: async (req, res, next) =>
+    {
+        const user = await User.findById(req.user._id)
+
+        if(user) {
+           user.userName = req.body.userName || user.userName;
+           user.email = req.body.email || user.email;
+           user.firstName = req.body.firstName || user.firstName;
+           user.lastName = req.body.lastName || user.lastName;
+
+           if(req.body.password)
+           {
+               user.password = req.body.password
+           }
+
+           const userProfile = await user.save();
+
+           req.json({
+               _id: userProfile._id,
+               userName: userProfile.userName,
+               email: userProfile.email,
+               firstName: userProfile.firstName,
+               lastName: userProfile.lastName,
+               isAdmin: userProfile.isAdmin,
+               token: generateToken(updatedUser._id)
+           })
+        }
+        else
+        {
+            return res.status(401).json("User not found")
+        }
+    }
 }
 
 module.exports = authControl
