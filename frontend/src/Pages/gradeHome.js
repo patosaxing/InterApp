@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Pages/CSS/home.css';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
 //import { login } from '../actions/action.auth';
 //import { FaMarsDouble } from 'react-icons/fa';
@@ -15,11 +15,14 @@ const GradeHome = () =>
     const [error, setError] = useState(false)
     const [loading, setLoading] = useState(false)
 
+    const history = useHistory();
+
     const submitHandler = async (e) =>
     {
         e.preventDefault();
 
         try {
+
             const config = {
                 headers:{
                     "Content-type" : "application/json"
@@ -33,16 +36,26 @@ const GradeHome = () =>
                 email, password,
             },
             config);
-
+            window.location = '/Profile'
             console.log(data)
             localStorage.setItem("userInfo", JSON.stringify(data))
+
+            
+
             setLoading(false)
-        } 
+
+         } 
         catch (error) {
             setError(error.response.data.message)
         }
         console.log(email, password)
     }
+
+    // useEffect(() => {
+    //     if(userInfo){
+    //         history.push("/Profile")
+    //     }         
+    //  }, [history, userInfo])
     
     return (
         <div>

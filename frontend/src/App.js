@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //import { Container } from 'react-bootstrap';
 import Navbar from './Components/Navbar'
-import Home from './Pages/GradeHome';
+import Home from './Pages/gradeHome';
 import About from './Pages/gradeAbout';
 import Footer from './Components/footer'
 import Login from './Pages/Login'
