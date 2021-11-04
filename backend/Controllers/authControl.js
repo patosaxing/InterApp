@@ -110,6 +110,16 @@ const authControl = {
         {
             return res.status(401).json("User not found")
         }
+    },
+
+    updateUserProfile: async(req, res) => {
+        const id = req.user._id;
+        const user = await User.findById(req.user._id);
+
+        if(user) {
+            user.userName = req.body.userName || user.userName;
+            user.email = req.body.email || user.email;
+        }
     }
 }
 
