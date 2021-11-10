@@ -1,15 +1,16 @@
 import { React, useState, useEffect } from "react";
+import axios from "axios";
 import { useHistory, useParams } from "react-router-dom";
 
 const Profile = () => {
     const [userProfile, setUserProfile] = useState(
         {
-        _id: "6169308ae7a55c5230e9a05e",
-        userName: 'Zeolani',
-        email: 'diza@yahoo.com',
-        password: '$2b$10$Vsx09MvxOI4OPx3tLgSBjOdhw8C.gfGgPkOldwNG2tVl2JNdhRfHC',
-        firstName: 'Diza',
-        lastName: 'Amedu-Ode',
+        _id: "",
+        userName: '',
+        email: '',
+        password: '',
+        firstName: '',
+        lastName: '',
         __v: 0 
     }
     );
@@ -17,9 +18,21 @@ const Profile = () => {
     useEffect(() => {
         //axios to call backend /profile
         //assign the result of /profile to userProfile state
-        // const data = axios.get("/profile");
-        // setUserProfile(data);
+        const getUserProfile = async () => {
+
+        const userInfo = localStorage.getItem('userInfo')
+        const user = JSON.parse(userInfo)
+        console.log(user)
+        const data = await axios.get("http://localhost:4000/users/profile", {
+            headers: {
+                authorization: 'Bearer ' + user.token
+            }
+        })
+        console.log(data)
+        setUserProfile(data.data);
         console.log("effect loaded")
+        }
+        getUserProfile()
     }, [])
 
 return (

@@ -16,7 +16,7 @@ router.post("/register", [
 
 router.post("/login", authControl.login);
 
-router.route("/profile").post(protect, authControl.getUserProfile)
+router.route("/profile").get(protect, authControl.getUserProfile)
 
 
 // router.get("/", async(req,res) =>

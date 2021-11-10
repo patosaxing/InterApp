@@ -62,7 +62,7 @@ const authControl = {
         if (user && (await user.matchPassword(password)))
         {
             res.json({
-                _id: user._id,
+                //_id: user._id,
                 username: user.username,
                 email: user.email,
                 isAdmin: user.isAdmin,
@@ -84,26 +84,26 @@ const authControl = {
         const user = await User.findById(req.user._id)
 
         if(user) {
-           user.userName = req.body.userName || user.userName;
-           user.email = req.body.email || user.email;
-           user.firstName = req.body.firstName || user.firstName;
-           user.lastName = req.body.lastName || user.lastName;
+        //    user.userName = req.body.userName || user.userName;
+        //    user.email = req.body.email || user.email;
+        //    user.firstName = req.body.firstName || user.firstName;
+        //    user.lastName = req.body.lastName || user.lastName;
 
-           if(req.body.password)
-           {
-               user.password = req.body.password
-           }
+        //    if(req.body.password)
+        //    {
+        //        user.password = req.body.password
+        //    }
 
-           const userProfile = await user.save();
+        //    const userProfile = await user.save();
 
-           req.json({
-               _id: userProfile._id,
-               userName: userProfile.userName,
-               email: userProfile.email,
-               firstName: userProfile.firstName,
-               lastName: userProfile.lastName,
-               isAdmin: userProfile.isAdmin,
-               token: generateToken(updatedUser._id)
+           res.json({
+            //    _id: userProfile._id,
+               userName: user.userName,
+               email: user.email,
+               firstName: user.firstName,
+               lastName: user.lastName,
+               isAdmin: user.isAdmin,
+            //    token: generateToken(updatedUser._id)
            })
         }
         else
