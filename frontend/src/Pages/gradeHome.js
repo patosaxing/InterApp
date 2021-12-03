@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Pages/CSS/home.css';
 import { useState, useEffect } from 'react';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 //import { login } from '../actions/action.auth';
 //import { FaMarsDouble } from 'react-icons/fa';
@@ -79,7 +79,9 @@ const GradeHome = () =>
 
                 
                 <button type = "submit">
-                    Log In
+                    <Link to = "/login">
+                        Log In
+                    </Link>
                 </button> 
                 <br />
 

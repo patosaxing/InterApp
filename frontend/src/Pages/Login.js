@@ -29,7 +29,7 @@ const Login = () => {
                 email, password,
             },
             config);
-
+            window.location = './Profile'
             console.log(data)
             localStorage.setItem("userInfo", JSON.stringify(data))
             setLoading(false)

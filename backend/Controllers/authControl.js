@@ -120,6 +120,18 @@ const authControl = {
             user.userName = req.body.userName || user.userName;
             user.email = req.body.email || user.email;
         }
+    },
+
+    logout: async(req, res) => {
+        try
+        {
+            res.clearCookie("generateToken", { path: '/users/profile' } )
+            return res.join({ msg: 'Logged Out' })
+        }
+        catch(error)
+        {
+            return res.status(500).json ({ msg: error.message })
+        }
     }
 }
 

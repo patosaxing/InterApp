@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import axios from "axios";
-import { useHistory, useParams } from "react-router-dom";
+//import { useHistory, useParams } from "react-router-dom";
 
 const Profile = () => {
     const [userProfile, setUserProfile] = useState(

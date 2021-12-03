@@ -15,8 +15,10 @@ router.post("/register", [
 
 
 router.post("/login", authControl.login);
+router.post("/logout", authControl.logout);
 
-router.route("/profile").get(protect, authControl.getUserProfile)
+
+router.route("/profile").get(protect, authControl.getUserProfile);
 
 
 // router.get("/", async(req,res) =>
