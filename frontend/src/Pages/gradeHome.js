@@ -94,7 +94,7 @@ const GradeHome = () =>
                 <div className = "line"></div>
                 <br />
 
-                <a href = "" className = "f-pws">
+                <a href = "/" className = "f-pws">
                     Forget Password
                 </a>
                 <br />

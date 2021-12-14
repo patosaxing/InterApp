@@ -1,10 +1,10 @@
 import React from 'react';
-import Navbar from './Navbar'
+import NavbarApp from './NavbarApp'
 
 function Header() {
     return (
         <div id = 'main'>
-            <Navbar/>
+            <NavbarApp/>
         </div>
     )
 }

@@ -1,5 +1,7 @@
 import { React, useState, useEffect } from "react";
 import axios from "axios";
+import NavbarApp from "../Components/NavbarApp";
+//import { Navbar } from "react-bootstrap";
 //import { useHistory, useParams } from "react-router-dom";
 
 const Profile = () => {
@@ -37,11 +39,13 @@ const Profile = () => {
 
 return (
     <div>
+        <NavbarApp/>
         {
             userProfile && (
                 <h1> Welcome {userProfile.userName}</h1>
             )
         }
+        
     </div>
 
 )

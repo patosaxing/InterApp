@@ -1,9 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Pattaya&display=swap');
 
-.logo{
+/* .logo{
   font-size: 60px;
-  font-family:'Aclonica', sans-serif;
+  font-family:'Comfortaa' cursive;
   position: absolute;
   left: 250px;
+} */
+
+.bg-myWhiteish{
+  background-color: #F5F5F5;
+  font-family: 'Aclonica';
+  font-size: 50px;
+  padding: 0px 20px;
 }
 
+.brand1{
+  font-family: 'Comfortaa' cursive;
+}
+
+li{
+  text-align: right;
+  font-size: 40px;
+}
+
+/* .nav_links{
+  list-style: none;
+} */
