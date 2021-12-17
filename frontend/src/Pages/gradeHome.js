@@ -58,7 +58,7 @@ const GradeHome = () =>
     //  }, [history, userInfo])
     
     return (
-        <div>
+        <div className = 'form0'>
             <form action = "" className = "form1"
              onSubmit = {submitHandler} >
                 <input 

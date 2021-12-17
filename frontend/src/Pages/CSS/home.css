@@ -11,13 +11,18 @@ body{
     width: 100%;
 }
 
+.form0{
+    width: 320px;
+    height: 270px;
+}
+
 .form1{
     background-color: #fff;
     position: absolute;
-    width: 320px;
-    height: 270px;
+    /* width: 320px;
+    height: 270px; */
     padding: 10px 5px 20px 5px;
-    margin: -10vh 850px;
+    margin: -09vh 950px;
     border-radius: 5px;
     box-shadow: 5px 5px 6px -7px;
     margin-bottom: 80px;
@@ -75,8 +80,8 @@ button{
 
 .inter{
     width: 350px;
-    margin: -09vh 350px;
-    margin-top: 250px;
+    margin: -09vh 480px;
+    margin-top: 350px;
 }
 
 .header{

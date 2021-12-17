@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import '../Pages/CSS/navbar.css'
 import { Navbar } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Profile from '../Pages/Profile'
+import axios from 'axios'
 // import { NavDropdown } from 'react-bootstrap'
 // import { Nav, 
 //          NavLink,
@@ -11,7 +12,20 @@ import Profile from '../Pages/Profile'
   
 
 const NavbarApp = () => {
+
+    let history = useHistory();
+    
+
+    const logout = async () =>{ 
+        localStorage.setItem('userInfo', '')
+        history.push('/')
+        // const data = await axios.post("http://localhost:4000/users/logout")
+        // console.log(JSON.stringify(data))
+    }
+
     const renderList = () =>{
+
+
         if(Profile){
             return[
                 
@@ -21,6 +35,8 @@ const NavbarApp = () => {
                         <Link to = '/convert'>Convert</Link>
 
                         <Link to = '/about'>About</Link>
+
+                        <button onClick={logout}> Logout </button>
                     </li>
             ]
         }

@@ -125,8 +125,8 @@ const authControl = {
     logout: async(req, res) => {
         try
         {
-            res.clearCookie("generateToken", { path: '/users/profile' } )
-            return res.join({ msg: 'Logged Out' })
+            res.clearCookie("token" )
+            return res.send('token')
         }
         catch(error)
         {
