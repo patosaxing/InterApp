@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../Pages/CSS/navbar.css'
-import { Navbar } from 'react-bootstrap'
+import {Nav, Navbar, NavDropdown, Container, 
+        Form, FormControl, Button} from 'react-bootstrap'
 import { Link, useHistory } from 'react-router-dom'
 import Profile from '../Pages/Profile'
 import axios from 'axios'
-// import { NavDropdown } from 'react-bootstrap'
-// import { Nav, 
+// import {  
 //          NavLink,
 //          Bars, NavMenu
 //        } from './NavbarElements'
@@ -14,85 +14,105 @@ import axios from 'axios'
 const NavbarApp = () => {
 
     let history = useHistory();
+
+    const[navProfile, setNavProfile] = useState(
+        {
+            userName: '',
+            email: '',
+            password: '',
+            firstName: '',
+            lastName: '',
+            __v: 0 
+    });
+
+    useEffect(() => {
+        //axios to call backend /profile
+        //assign the result of /profile to userProfile state
+        const getUserProfile = async () => {
+
+        const userInfo = localStorage.getItem('userInfo')
+        const user = JSON.parse(userInfo)
+        console.log(user)
+        const data = await axios.get("http://localhost:4000/users/profile", {
+            headers: {
+                authorization: 'Bearer ' + user.token
+            }
+        })
+        console.log(data)
+        setNavProfile(data.data);
+        console.log("effect loaded")
+        }
+        getUserProfile()
+    }, [])
     
 
     const logout = async () =>{ 
         localStorage.setItem('userInfo', '')
         history.push('/')
-        // const data = await axios.post("http://localhost:4000/users/logout")
-        // console.log(JSON.stringify(data))
     }
 
     const renderList = () =>{
 
-
         if(Profile){
             return[
-                
-                    <li>
-                        <Link to = '/profile'>Profile</Link>
+                        <ul className = 'dropdown1'>
 
-                        <Link to = '/convert'>Convert</Link>
-
-                        <Link to = '/about'>About</Link>
-
-                        <button onClick={logout}> Logout </button>
-                    </li>
+                           <li><a href = '/profile'>{navProfile.userName}</a></li>       
+                                        <li><a href = '/convert'>Convert</a></li>
+                                        <li><a href = '/about'>About</a></li>
+                                        <li><a href = '/' onClick = {logout}>Log Out</a></li>          
+                        </ul>  
+                      
             ]
         }
         else{
             return[
-                <li>
-                    <Link to = '/Login'>Login</Link>
+                <li className = 'dropdown2'>
 
+                    <Link to = '/Login'>Login</Link>
                     <Link to = '/register'>Register</Link>
+
                 </li>
             ]
         }
     }
 
     return (
-        <header>
-           <div className = 'navbar'>
-                <Navbar bg = "myWhiteish" variant = "dark">
-                    <Navbar.Brand>
-                        <Link to = '/'> 
-                            IA
-                        </Link>
-                    </Navbar.Brand>
-                    <ul id = 'nav-mobile' className = 'right'>
+        
+        <Nav className = "navbar-navbar-default">
+           <Navbar>
+            <div className = "container-fluid">
+                <div className = "navbar-header">
+                    <Link>
+                        <a className = "navbar-brand" href = "/">IA</a>
+                    </Link>
+                </div>
+
+                <div className = 'contain'>
+                <ul className = "nav-navbar-nav">
                         {renderList()}
-                    </ul>
-                </Navbar>
-           </div>
-        </header>
-        
-        
-        
-        // <nav>
-        //     <div className = 'nav-wrapper white' >
-        //         <Link to = '/' className = 'brand-logo-left'>
-        //             IA 
-        //         </Link>
-        //         <ul id = 'nav-mobile' className = 'right'>
-        //             <li></li>
-        //         </ul>
-        //     </div>
-        // </nav>
+                </ul>
+                </div>
+            </div>
+            </Navbar> 
+        </Nav>
 
-        // <>
-        //     <Nav>
-        //             <NavLink to = "/">
-        //                 <h1 className = "logo" >
-        //                     IA
-        //                 </h1>
-        //             </NavLink>
+        //  <>
+        //    <Nav>
+        //          <Navbar>
+        //              <NavLink to = "/">
+        //                  <h1 className = "logo" >
+        //                      IA
+        //                  </h1>
+        //              </NavLink>
 
-        //             <Bars />
+        //              <Bars />
 
-        //         <NavDropdown id = 'collasible-nav-dropdown' >
-        //             <NavMenu className = "navMenu">
-        //                 <NavLink to = "/about" activeStyle>
+        //          <NavDropdown id = 'collasible-nav-dropdown' >
+        //              <NavMenu className = "navMenu">
+
+        //                  {renderList()} 
+        //                  <NavLink to = "/about" activeStyle>
         //                     About
         //                 </NavLink>
 
@@ -102,11 +122,12 @@ const NavbarApp = () => {
 
         //                 <NavLink to = "/contactUs">
         //                     Contact Us
-        //                 </NavLink>
+        //                 </NavLink> 
         //             </NavMenu>
-        //         </NavDropdown>
-        //     </Nav>
-        // </>
+        //        </NavDropdown>
+        //          </Navbar>
+        //      </Nav>
+        //  </> 
     )
 }
 

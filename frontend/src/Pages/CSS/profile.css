@@ -1,0 +1,27 @@
+.form-group0{
+    /* max-width: 1150px; */
+    /* margin: auto; */
+    /* border-radius: 5px; */
+    padding: 20px;
+}
+
+.form-group0 label{
+    font-size: 30px;
+    padding-right: 10px;
+}
+
+.form-group0 input{
+    height: 30px;
+    width: 7%;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+/* input[type = text], select{
+    width: 45%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+} */

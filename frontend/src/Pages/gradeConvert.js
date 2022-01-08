@@ -1,13 +1,26 @@
 import React from 'react'
+import NavbarApp from '../Components/NavbarApp';
 //import { makeStyles } from '@material-ui/core/styles'
 
-const gradeConvert = () => {
+const GradeConvert = () => {
     return (
+
+        // <div>
+        //     <NavbarApp/>
+        //     <div style = {{display: 'flex', justifyContent: 'center',
+        //         alignItems: 'center', height: '90vh'}}>
+        //             <h1> Convert </h1>
+        //     </div>
+        // </div>
+
         <div id = "main">
-            <div id = "head">
+            <NavbarApp/>
+            <div id = "head" style = {{display: 'flex', justifyContent: 'center',
+                alignItems: 'center', height: '90vh'}}>
+
                 <h1> Grading System </h1>
 
-                <label>English</label> 
+                 <label>English</label> 
                 <input type = "text" /><br />
 
                 <label>Mathematics</label>
@@ -21,11 +34,11 @@ const gradeConvert = () => {
 
                 <button>Total</button>
                 <button>Average</button>
-                <button>Grade</button>
+                <button>Grade</button> 
 
-            </div>
-        </div>
+             </div>
+         </div>
     )
 }
 
-export default gradeConvert;
+export default GradeConvert;
