@@ -52,7 +52,7 @@ input[type = 'text'], input[type = 'password']{
     font-family: 'Comfortaa' cursive;
 }
 
-button{
+.button{
     border: none;
     background-color: #FF4040;
     color: black;
@@ -65,8 +65,15 @@ button{
 }
 
 .btn2{
+    border: none;
+    background-color: #FF4040;
+    color: black;
     width: 283px;
+    display: block;
+    border-radius: 5px;
     padding: 10px 0;
+    font-weight: bold;
+    font-family:'Comfortaa', cursive;
 }
 
 .f-pws{

@@ -47,59 +47,11 @@ return (
             )
             }
 
-    <div className = "wrapper">
-        <h2>GP Calculator</h2>
-    </div>
-
-        {/* <form>
-            <div className = 'form-group0'>
-                <label>Mathematics</label>
-                    <input type = 'number' className = 'form-control' id = 'input1' 
-                     placeholder = 'Mathematics' />
-                     <br/>
-
-                <label>English</label>
-                    <input type = 'number' className = 'form-control' id = 'input1' 
-                     placeholder = 'English' />
-                     <br/>
-
-                <label>Sciences</label>
-                    <input type = 'number' className = 'form-control' id = 'input1' 
-                     placeholder = 'Sciences' />
-                     <br/>
-
-                <label>Social Studies</label>
-                    <input type = 'number' className = 'form-control' id = 'input1' 
-                     placeholder = 'Social Studies' />
-                     <br/>
-
-                <label>Electives</label>
-                    <input type = 'number' className = 'form-control' id = 'input1' 
-                     placeholder = 'Electives' />
-                     <br/>
-
-                <label>Electives</label>
-                <select class = "form-control" id = "Electives1">
-                    <option value = 'Electives'>Languages</option>
-                    <option>Igbo</option>
-                    <option>Yoruba</option>
-                    <option>Hausa</option>
-                    <option>Edo</option>
-                </select>
-
-                <button className = 'btn1'>Total</button>
-                <br />
-
-                <button className = 'btn2'>Average</button>
-                <br />
-
-                <button className = 'btn3'>Grade</button>
-
-            </div>
-
-        </form>     */}
+        <div className = "wrapper">
+            <h2>GP Calculator</h2>
+        </div>
             
-             <div>
+            <div className = 'Subject'>
                 <div className = "lbls">
                   <label>English</label> 
                     <input type = "text" /><br />
@@ -116,7 +68,7 @@ return (
                  <label>Electives</label>
 
                     <select class = "form-control" id = "Electives1">
-                        
+
                     <option value = 'Electives'>Languages</option>
                     <option>Igbo</option>
                     <option>Yoruba</option>
@@ -125,17 +77,38 @@ return (
                     </select>
                 </div>
                 <br />
-
+                
                 <div className = "btns">
-                    <button>Total</button>
+                    <button className = 'profileBtn1'>Total</button>
                     <br/>
 
-                    <button>Average</button>
+                    <button className = 'profileBtn2'>Average</button>
                     <br/>
 
-                    <button>Grade</button> 
+                    <button className = 'profileBtn3'>Grade</button> 
+                </div> 
+
+            </div>
+
+            <div className = 'result'>
+                    <div className = 'head1'> <h1>Total</h1> </div>
+
+                        <div className = 'total'>
+
+                        </div>
+
+                    <div className = 'head2'> <h1>Average</h1> </div>
+
+                        <div className = 'ave'>
+
+                        </div>
+
+                    <div className = 'head3'> <h1>Grade</h1> </div>
+                    
+                        <div className = 'grade'>
+
+                        </div>
                 </div>
-             </div>
         
         
     </div>

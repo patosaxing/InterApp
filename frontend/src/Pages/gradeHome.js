@@ -78,7 +78,7 @@ const GradeHome = () =>
                 <br />
 
                 
-                <button type = "submit">
+                <button type = "submit" className = 'button'>
                     <Link to = "/login">
                         Log In
                     </Link>
