@@ -67,7 +67,7 @@ return (
 
                  <label>Electives</label>
 
-                    <select class = "form-control" id = "Electives1">
+                    <select className = "form-control" id = "Electives1">
 
                     <option value = 'Electives'>Languages</option>
                     <option>Igbo</option>

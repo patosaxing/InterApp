@@ -15,15 +15,23 @@ router.post("/register", [
 
 
 router.post("/login", authControl.login);
+router.post("/forgotPassword", authControl.forgotPassword);
+router.put("/passwordReset/:resetToken", authControl.resetPassword);
 router.post("/logout", authControl.logout);
 
 
-router.route("/profile").get(protect, authControl.getUserProfile);
+router
+  .route("/profile")
+  .get(protect, authControl.getUserProfile)
+  .put(protect, authControl.updateUserProfile);
+
+//Admin routes to control user list
+router
+   .route('/:id')
+   .delete(protect, admin, authControl.deleteUser)
+   .get(protect, admin, authControl.getUsers)
+   .put(protect, admin, authControl.updateUser);
 
 
-// router.get("/", async(req,res) =>
-// {
-//     res.send("I am hitting home page")
-// })
 
 module.exports = router
