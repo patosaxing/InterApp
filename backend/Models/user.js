@@ -1,8 +1,8 @@
 //Import Statements
-const crypto = require("crypto")  //supports calculating hashes, authentication
-const mongoose = require("mongoose")
-const bcrypt = require("bcrypt")
-const jwt = require("jsonwebtoken")
+const crypto = require("crypto"); //supports calculating hashes, authentication
+const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 //Declares and Imports Schema from Mongoose
 const UserSchema = mongoose.Schema(

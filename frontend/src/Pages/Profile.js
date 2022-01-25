@@ -53,27 +53,39 @@ return (
             
             <div className = 'Subject'>
                 <div className = "lbls">
-                  <label>English</label> 
-                    <input type = "text" /><br />
+                  {/* <label>English</label>  */}
+                    <input type = "number" placeholder = "English" /><br />
 
-                 <label>Mathematics</label>
-                    <input type = "text" /><br />
+                 {/* <label>Mathematics</label> */}
+                    <input type = "number" placeholder = "Mathematics" /><br />
 
-                 <label>Computer</label>
-                    <input type = "text" /><br />
+                 {/* <label>Computer</label> */}
+                    <input type = "number" placeholder = "Computer" /><br />
 
-                 <label>Sciences</label>
-                    <input type = "text" /><br />
+                 {/* <label>Sciences</label> */}
+                    <input type = "number" placeholder = "Sciences" /><br />
 
-                 <label>Electives</label>
+                 <label>Electives 1</label>
 
                     <select className = "form-control" id = "Electives1">
 
-                    <option value = 'Electives'>Languages</option>
-                    <option>Igbo</option>
-                    <option>Yoruba</option>
-                    <option>Hausa</option>
-                    <option>Edo</option>
+                        <option value = 'Electives'>Languages</option>
+                            <option>Igbo</option>
+                            <option>Yoruba</option>
+                            <option>Hausa</option>
+                            <option>Edo</option>
+                    </select><br />
+                    {/* <input type = "text" /> */}
+
+                 <label>Electives 2</label>
+
+                    <select className = "form-control" id = "Electives2">
+
+                        <option value = 'Electives'>Languages</option>
+                            <option>Igbo</option>
+                            <option>Yoruba</option>
+                            <option>Hausa</option>
+                            <option>Edo</option>
                     </select>
                 </div>
                 <br />

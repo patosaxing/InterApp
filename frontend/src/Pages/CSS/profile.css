@@ -23,6 +23,14 @@
     /* margin: -09vh 950px; */
 }
 
+/* input[type = "number"]{
+    
+} */
+
+::placeholder{
+    font-family: 'Comfortaa' cursive;
+}
+
 .result{
     /* margin-bottom: 90vh;
     position: absolute;
@@ -73,17 +81,20 @@
 }
 
 .btns{
-    margin-left: 115px;
+    margin-left: 80px;
+    margin-top: 43vh;
+    display: inline-flex;
 }
 
 .profileBtn1, .profileBtn2, .profileBtn3{
     border: none;
     background-color: #FF4040;
     color: black;
-    width: 270px;
+    width: 100px;
     display: block;
     border-radius: 5px;
-    padding: 10px 0;
+    padding: 5px 0;
     font-weight: bold;
     font-family:'Comfortaa', cursive;
+    margin: 10px;
 }
